@@ -1,13 +1,14 @@
 package hip.controller;
 
 import hipster.model.Hipster;
-
+import hip.view.HipFrame;
 
 public class HipController
 {
 	private int [] numbers;
 	private String [] words = {"This ","is the ", "second hipster ","level: ", "initialization ","lists"};
 	private Hipster [] hipsters;
+	private HipFrame appFrame;
 
 	
 	public HipController()
@@ -16,6 +17,7 @@ public class HipController
 		
 		hipsters = new Hipster[6];
 		
+		appFrame = new HipFrame(this);
 	}
 	private void thirdLevelHipster()
 	{

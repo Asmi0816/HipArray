@@ -1,6 +1,7 @@
 package hip.view;
 import javax.swing.*;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import hip.controller.HipController;
 
 import java.awt.Color;
@@ -19,7 +20,7 @@ public class HipPanel extends JPanel
 	 this.baseController = baseController;
 	 myButton = new JButton("Click me!");
 	 wordsLabel = new JLabel("Words here");
-	 dropDown = new JComboBox(baseController.getHipsters());
+	 dropDown = new JComboBox(baseController.getWords());
 	 baseLayout = new SpringLayout();
 
 	 
@@ -50,6 +51,13 @@ public class HipPanel extends JPanel
  }
  private void setupListeners()
  {
-	 
+	 dropDown.addActionListener(new ActionListener()
+	 {
+		 public void actionPerformed(ActionEvent selection)
+		 {
+			 String selectedText = baseController.getWords()[dropDown.getSelectedIndex()];
+			 wordsLabel.setText(selectedText);
+		 }
+	 });
  }
 }
