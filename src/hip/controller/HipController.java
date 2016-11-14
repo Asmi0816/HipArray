@@ -17,6 +17,11 @@ public class HipController
 		
 		hipsters = new Hipster[6];
 		
+		for (int index = 0; index < hipsters.length; index++)
+		{
+			hipsters [index] = new Hipster("Hipster # " + index);
+		}
+		
 		appFrame = new HipFrame(this);
 	}
 	private void thirdLevelHipster()
@@ -26,10 +31,7 @@ public class HipController
 	public void start()
 	{
 		
-		for (int index = 0; index < hipsters.length; index++)
-		{
-			hipsters [index] = new Hipster("Hipster # " + index);
-		}
+	
 		for (Hipster currentHipster : hipsters)
 		{
 			System.out.println(currentHipster + ", ");
