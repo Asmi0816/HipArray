@@ -48,6 +48,15 @@ public class HipController
 		}
 		
 	}
+	
+	public void impactHipsters()
+	{
+		for(Hipster currentHipster : hipsters)
+		{
+			currentHipster.calculateHipsterRank();
+		}
+	}
+	
 	public  String[] getWords()
 	{
 		return words;
