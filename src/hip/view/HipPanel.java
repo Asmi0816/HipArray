@@ -22,7 +22,7 @@ public class HipPanel extends JPanel
 	 wordsLabel = new JLabel("Words here");
 	 dropDown = new JComboBox(baseController.getHipsters());
 	 baseLayout = new SpringLayout();
-
+	
 	 
 	 
 	 setupPanel();
@@ -41,12 +41,11 @@ public class HipPanel extends JPanel
  private void setupLayout()
  {
 	 baseLayout.putConstraint(SpringLayout.NORTH, wordsLabel, 148, SpringLayout.NORTH, this);
-	 baseLayout.putConstraint(SpringLayout.NORTH, myButton, 72, SpringLayout.NORTH, this);
-	 baseLayout.putConstraint(SpringLayout.WEST, myButton, 83, SpringLayout.WEST, this);
 	 baseLayout.putConstraint(SpringLayout.WEST, wordsLabel, 189, SpringLayout.WEST, this);
 	 baseLayout.putConstraint(SpringLayout.NORTH, dropDown, 61, SpringLayout.NORTH, this);
 	 baseLayout.putConstraint(SpringLayout.EAST, dropDown, -90, SpringLayout.EAST, this);
-	 
+	 baseLayout.putConstraint(SpringLayout.WEST, myButton, 82, SpringLayout.WEST, this);
+	 baseLayout.putConstraint(SpringLayout.SOUTH, myButton, -81, SpringLayout.SOUTH, this);
 	 
  }
  private void setupListeners()
@@ -57,7 +56,7 @@ public class HipPanel extends JPanel
 		 {
 			 String selectedText = baseController.getHipsters()[dropDown.getSelectedIndex()].toString();
 			 wordsLabel.setText(selectedText);
-			 repaint();
+			 
 		 }
 	 });
 	 

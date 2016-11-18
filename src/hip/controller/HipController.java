@@ -53,7 +53,7 @@ public class HipController
 	{
 		for(Hipster currentHipster : hipsters)
 		{
-			currentHipster.calculateHipsterRank();
+			currentHipster.calculateHipsterRank(100);
 		}
 	}
 	
